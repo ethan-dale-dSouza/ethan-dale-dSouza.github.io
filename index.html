@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ethan D'Souza</title>
+<meta name="description" content="Ethan D'Souza — all my links and articles in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ═══════════════════════════════════════════════════════════
+     ✏️  1. EDIT YOUR CONTENT HERE (no other code needs touching)
+     ═══════════════════════════════════════════════════════════ -->
+<script>
+const SITE = {
+
+  // ---- Basics ----
+  name:       "Ethan D'Souza",
+  firstName:  "Ethan",
+  handle:     "ethan.dsouza",          // shown in the top-left logo
+  status:     "available for collaborations",   // small badge above your name. Use "" to hide it
+  tagline:    "I write and build at the intersection of AI and technology — turning complex ideas into things people can actually use.",
+  email:      "you@example.com",       // <-- put your real email here
+
+  // ---- About section ----
+  about: [
+    "I'm Ethan, a writer and tech enthusiast based in India. I explore how AI is changing the way we work, create and think.",
+    "This site is my single home on the internet: every profile I run and every article I publish, in one place."
+  ],
+  focus: "ai · tech · writing",        // shown in the terminal box
+
+  // ---- Social links ----
+  // To ADD one: copy a line and change it.  To REMOVE one: delete its line.
+  // "icon" is the short text shown in the badge (e.g. "in", "X", "gh").
+  socials: [
+    { name: "LinkedIn",  icon: "in", desc: "Professional updates",    url: "https://linkedin.com/in/your-handle" },
+    { name: "X / Twitter", icon: "X", desc: "Thoughts & threads",     url: "https://x.com/your-handle" },
+    { name: "Instagram", icon: "ig", desc: "Life behind the screen",  url: "https://instagram.com/your-handle" },
+    { name: "GitHub",    icon: "gh", desc: "Code & experiments",      url: "https://github.com/your-handle" },
+    { name: "YouTube",   icon: "yt", desc: "Videos & walkthroughs",   url: "https://youtube.com/@your-handle" },
+    { name: "Medium",    icon: "md", desc: "Long-form writing",       url: "https://medium.com/@your-handle" }
+  ],
+
+  // ---- Articles ----
+  // To ADD one: copy a block and change it.  Newest first.
+  // "url" is wherever the article lives (Medium, LinkedIn, Substack, your own blog...).
+  articles: [
+    {
+      title:   "Your first article title goes here",
+      date:    "NOV 2026",
+      read:    "6 MIN READ",
+      summary: "A one or two line summary that tells readers why this piece is worth their time.",
+      url:     "https://example.com/article-1"
+    },
+    {
+      title:   "Second article title goes here",
+      date:    "OCT 2026",
+      read:    "4 MIN READ",
+      summary: "Swap this text with the key idea or takeaway from your article.",
+      url:     "https://example.com/article-2"
+    },
+    {
+      title:   "Third article title goes here",
+      date:    "SEP 2026",
+      read:    "8 MIN READ",
+      summary: "Link each card to wherever the article lives.",
+      url:     "https://example.com/article-3"
+    }
+  ],
+
+  // ---- Colours (neon saffron + neon blue). Change the hex codes to retheme the whole site ----
+  colors: {
+    saffron: "#ff9d1a",
+    blue:    "#19c3ff",
+    bg:      "#05060d"
+  }
+};
+</script>
+
+<style>
+  /* ═══════════════════════════════════════════════════════════
+     🎨  2. DESIGN / STYLES (edit only if you want to restyle)
+     ═══════════════════════════════════════════════════════════ */
+  :root{
+    --bg:#05060d; --saffron:#ff9d1a; --blue:#19c3ff;   /* overridden from SITE.colors */
+    --panel:rgba(255,255,255,.04);
+    --line:rgba(255,255,255,.09);
+    --text:#e8ecf5;
+    --muted:#8d95aa;
+    --grad:linear-gradient(110deg,var(--saffron),var(--blue));
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-2;
+    background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(ellipse at 50% 20%,#000 30%,transparent 80%);
+  }
+  .orb{position:fixed;border-radius:50%;filter:blur(110px);opacity:.35;z-index:-1;animation:float 14s ease-in-out infinite}
+  .orb.a{width:420px;height:420px;background:var(--saffron);top:-120px;left:-100px}
+  .orb.b{width:480px;height:480px;background:var(--blue);top:30%;right:-160px;animation-delay:-6s}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,30px)}}
+
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+  nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(14px);background:rgba(5,6,13,.6);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+  .logo{font-weight:700;letter-spacing:.5px;font-size:1.1rem}
+  .logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  nav ul{display:flex;gap:26px;list-style:none;font-size:.92rem}
+  nav a{color:var(--muted);text-decoration:none;transition:.2s}
+  nav a:hover{color:var(--text)}
+
+  .hero{padding:96px 0 70px}
+  .tag{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--blue);
+    border:1px solid rgba(25,195,255,.35);padding:6px 14px;border-radius:99px;background:rgba(25,195,255,.07)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--saffron);box-shadow:0 0 10px var(--saffron);animation:pulse 2s infinite}
+  @keyframes pulse{50%{opacity:.35}}
+  h1{font-size:clamp(2.8rem,8vw,5.6rem);line-height:1.02;margin:26px 0 20px;letter-spacing:-2px}
+  h1 .glow{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(255,157,26,.35))}
+  .sub{max-width:600px;color:var(--muted);font-size:1.15rem}
+  .cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+  .btn{padding:13px 26px;border-radius:12px;text-decoration:none;font-weight:500;font-size:.97rem;transition:.25s;display:inline-block}
+  .btn.primary{background:var(--grad);color:#05060d;box-shadow:0 0 28px rgba(255,157,26,.35)}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(25,195,255,.5)}
+  .btn.ghost{border:1px solid var(--line);color:var(--text);background:var(--panel)}
+  .btn.ghost:hover{border-color:var(--blue);box-shadow:0 0 20px rgba(25,195,255,.25)}
+
+  section{padding:64px 0}
+  .label{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--saffron);letter-spacing:2px;text-transform:uppercase}
+  h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:8px 0 34px;letter-spacing:-1px}
+
+  .grid{display:grid;gap:18px}
+  .links{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .articles{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+  .card{position:relative;display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.3s;overflow:hidden}
+  .card::after{content:"";position:absolute;inset:0;border-radius:18px;padding:1px;background:var(--grad);opacity:0;transition:.3s;
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+  .card:hover{transform:translateY(-4px);background:rgba(255,255,255,.07)}
+  .card:hover::after{opacity:1}
+  .card .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;margin-bottom:16px;background:rgba(25,195,255,.1);color:var(--blue);font-family:'JetBrains Mono',monospace;font-weight:500}
+  .links .card:nth-child(even) .ic{background:rgba(255,157,26,.1);color:var(--saffron)}
+  .card h3{font-size:1.05rem}
+  .card p{color:var(--muted);font-size:.88rem;margin-top:4px}
+  .arrow{position:absolute;top:20px;right:22px;color:var(--muted);transition:.3s}
+  .card:hover .arrow{color:var(--saffron);transform:translate(3px,-3px)}
+
+  .post .meta{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--blue);margin-bottom:12px}
+  .post h3{font-size:1.2rem;line-height:1.35;margin-bottom:10px}
+  .post p{color:var(--muted);font-size:.93rem;margin-top:0}
+  .read{display:inline-block;margin-top:16px;font-size:.88rem;color:var(--saffron)}
+
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:40px}
+  .about p{color:var(--muted);margin-bottom:14px}
+  .term{font-family:'JetBrains Mono',monospace;font-size:.84rem;background:#02030a;border:1px solid var(--line);border-radius:14px;padding:20px;color:var(--muted);line-height:1.9}
+  .term b{color:var(--saffron);font-weight:500}.term i{color:var(--blue);font-style:normal}
+  @media(max-width:760px){.about{grid-template-columns:1fr;padding:26px}nav ul{gap:16px}}
+
+  footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:.88rem;text-align:center}
+  .reveal{opacity:0;transform:translateY(24px);transition:.8s}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div class="orb a"></div><div class="orb b"></div>
+
+<nav>
+  <div class="wrap">
+    <div class="logo" id="logo"></div>
+    <ul>
+      <li><a href="#links">Links</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="hero">
+    <span class="tag" id="status"><span class="dot"></span><span id="statusText"></span></span>
+    <h1>Hi, I'm<br><span class="glow" id="heroName"></span></h1>
+    <p class="sub" id="tagline"></p>
+    <div class="cta">
+      <a class="btn primary" href="#writing">Read my articles</a>
+      <a class="btn ghost" href="#links">Find me online</a>
+    </div>
+  </header>
+
+  <section id="links" class="reveal">
+    <div class="label">// connect</div>
+    <h2>Find me everywhere</h2>
+    <div class="grid links" id="socialGrid"></div>
+  </section>
+
+  <section id="writing" class="reveal">
+    <div class="label">// writing</div>
+    <h2>Latest articles</h2>
+    <div class="grid articles" id="articleGrid"></div>
+  </section>
+
+  <section id="about" class="reveal">
+    <div class="label">// about</div>
+    <h2>The person behind the posts</h2>
+    <div class="about">
+      <div id="aboutText"></div>
+      <div class="term" id="term"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal" style="text-align:center">
+    <div class="label">// contact</div>
+    <h2>Let's talk</h2>
+    <p class="sub" style="margin:0 auto 28px">Open to collaborations, guest posts and interesting conversations.</p>
+    <a class="btn primary" id="emailBtn" href="#">Say hello</a>
+  </section>
+</main>
+
+<footer id="footer"></footer>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ⚙️  3. LOGIC (builds the page from the SITE block above)
+     ═══════════════════════════════════════════════════════════ -->
+<script>
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const $ = id => document.getElementById(id);
+
+  // colours
+  const r = document.documentElement.style;
+  r.setProperty('--saffron', SITE.colors.saffron);
+  r.setProperty('--blue', SITE.colors.blue);
+  r.setProperty('--bg', SITE.colors.bg);
+
+  // basics
+  document.title = SITE.name;
+  const [first, ...rest] = SITE.handle.split('.');
+  $('logo').innerHTML = esc(first) + (rest.length ? '<span>.' + esc(rest.join('.')) + '</span>' : '');
+  $('heroName').textContent = SITE.name + '.';
+  $('tagline').textContent = SITE.tagline;
+  if (SITE.status) $('statusText').textContent = SITE.status; else $('status').style.display = 'none';
+
+  // socials
+  $('socialGrid').innerHTML = SITE.socials.map(s => `
+    <a class="card" href="${esc(s.url)}" target="_blank" rel="noopener">
+      <span class="arrow">↗</span><div class="ic">${esc(s.icon)}</div>
+      <h3>${esc(s.name)}</h3><p>${esc(s.desc)}</p>
+    </a>`).join('');
+
+  // articles
+  $('articleGrid').innerHTML = SITE.articles.map(a => `
+    <a class="card post" href="${esc(a.url)}" target="_blank" rel="noopener">
+      <div class="meta">${esc(a.date)} · ${esc(a.read)}</div>
+      <h3>${esc(a.title)}</h3><p>${esc(a.summary)}</p>
+      <span class="read">Read article →</span>
+    </a>`).join('');
+
+  // about
+  $('aboutText').innerHTML = SITE.about.map(p => `<p>${esc(p)}</p>`).join('');
+  $('term').innerHTML = `<b>$</b> whoami<br><i>${esc(SITE.handle.replace('.', '_'))}</i><br><b>$</b> focus<br><i>${esc(SITE.focus)}</i><br><b>$</b> status<br><i>building &amp; publishing</i>`;
+
+  // contact + footer
+  $('emailBtn').href = 'mailto:' + SITE.email;
+  $('footer').textContent = '© ' + new Date().getFullYear() + ' ' + SITE.name + ' · Designed to be fast, free and yours.';
+
+  // scroll reveal
+  const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('in')), {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
